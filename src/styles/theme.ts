@@ -24,6 +24,8 @@ const theme = {
     gray2: "#4d4d4d",
     gray3: "#666666",
     gray4: "#808080",
+    gray5: "#c6c6c6",
+    gray6: "#dadada",
   },
 
   typo: {
