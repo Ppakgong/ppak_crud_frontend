@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import theme, { ColorType, TypoType } from "../../../styles/theme";
+import { ChangeEvent } from "react";
 
 export type InputStyleProps = {
   color?: ColorType;
@@ -12,7 +13,7 @@ export type InputStyleProps = {
 export type InputProps = InputStyleProps & {
   placeholder: string;
   value?: string;
-  onChange: () => void;
+  onChange: ({ e }: { e: ChangeEvent<HTMLInputElement> }) => void;
   name: string;
 };
 
@@ -36,7 +37,7 @@ const Input = ({
     <Index
       placeholder={placeholder}
       value={value}
-      onChange={onChange}
+      onChange={(e) => onChange({ e })}
       name={name}
       {...props}
     />

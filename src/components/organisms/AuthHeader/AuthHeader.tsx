@@ -13,7 +13,6 @@ export default AuthHeader;
 
 const Header = styled.header`
   width: 100%;
-  padding: 100px 0 20px;
   display: flex;
   justify-content: center;
   align-items: center;
