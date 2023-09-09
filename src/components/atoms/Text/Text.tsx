@@ -17,17 +17,13 @@ export type TextProps = TextStyleProps & {
  * @param typo default: medium4
  * @returns
  */
-const Text = ({ label, color = "gray1", typo = "medium4" }: TextProps) => {
-  return (
-    <Index color={color} typo={typo}>
-      {label}
-    </Index>
-  );
+const Text = ({ label, ...props }: TextProps) => {
+  return <Index {...props}>{label}</Index>;
 };
 
 export default Text;
 
-const Index = styled.span<{ color: ColorType; typo: TypoType }>`
-  color: ${({ color }) => theme.color[color]};
-  ${({ typo }) => theme.typo[typo]}
+const Index = styled.span<TextStyleProps>`
+  color: ${({ color = "gray1" }) => theme.color[color]};
+  ${({ typo = "medium4" }) => theme.typo[typo]}
 `;
