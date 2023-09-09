@@ -29,87 +29,87 @@ const theme = {
   typo: {
     bold1: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.xx_large};
+      font-size: ${typo_size.xx_large}px;
     `,
     bold2: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.x_large};
+      font-size: ${typo_size.x_large}px;
     `,
     bold3: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.large};
+      font-size: ${typo_size.large}px;
     `,
     bold4: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.medium};
+      font-size: ${typo_size.medium}px;
     `,
     bold5: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.small};
+      font-size: ${typo_size.small}px;
     `,
     bold6: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.x_small};
+      font-size: ${typo_size.x_small}px;
     `,
     bold7: css`
       font-weight: ${typo_weight.bold};
-      font-size: ${typo_size.xx_small};
+      font-size: ${typo_size.xx_small}px;
     `,
     medium1: css`
       font-weight: 500;
-      font-size: ${typo_size.xx_large};
+      font-size: ${typo_size.xx_large}px;
     `,
     medium2: css`
       font-weight: 500;
-      font-size: ${typo_size.x_large};
+      font-size: ${typo_size.x_large}px;
     `,
     medium3: css`
       font-weight: 500;
-      font-size: ${typo_size.large};
+      font-size: ${typo_size.large}px;
     `,
     medium4: css`
       font-weight: 500;
-      font-size: ${typo_size.medium};
+      font-size: ${typo_size.medium}px;
     `,
     medium5: css`
       font-weight: 500;
-      font-size: ${typo_size.small};
+      font-size: ${typo_size.small}px;
     `,
     medium6: css`
       font-weight: 500;
-      font-size: ${typo_size.x_small};
+      font-size: ${typo_size.x_small}px;
     `,
     medium7: css`
       font-weight: 500;
-      font-size: ${typo_size.xx_small};
+      font-size: ${typo_size.xx_small}px;
     `,
     regular1: css`
       font-weight: 400;
-      font-size: ${typo_size.xx_large};
+      font-size: ${typo_size.xx_large}px;
     `,
     regular2: css`
       font-weight: 400;
-      font-size: ${typo_size.x_large};
+      font-size: ${typo_size.x_large}px;
     `,
     regular3: css`
       font-weight: 400;
-      font-size: ${typo_size.large};
+      font-size: ${typo_size.large}px;
     `,
     regular4: css`
       font-weight: 400;
-      font-size: ${typo_size.medium};
+      font-size: ${typo_size.medium}px;
     `,
     regular5: css`
       font-weight: 400;
-      font-size: ${typo_size.small};
+      font-size: ${typo_size.small}px;
     `,
     regular6: css`
       font-weight: 400;
-      font-size: ${typo_size.x_small};
+      font-size: ${typo_size.x_small}px;
     `,
     regular7: css`
       font-weight: 400;
-      font-size: ${typo_size.xx_small};
+      font-size: ${typo_size.xx_small}px;
     `,
   },
 
