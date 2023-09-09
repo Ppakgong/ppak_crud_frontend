@@ -3,12 +3,12 @@ import theme, { ColorType, TypoType } from "../../../styles/theme";
 import { ChangeEvent } from "react";
 
 export type InputStyleProps = {
-  color?: ColorType;
-  typo?: TypoType;
-  py?: number;
-  px?: number;
-  borderRadius?: number;
-  borderColor?: ColorType;
+  $color?: ColorType;
+  $typo?: TypoType;
+  $py?: number;
+  $px?: number;
+  $border_radius?: number;
+  $border_color?: ColorType;
 };
 
 export type InputProps = InputStyleProps & {
@@ -51,11 +51,11 @@ export default Input;
 const Index = styled.input<InputStyleProps>`
   width: 100%;
   height: 100%;
-  color: ${({ color = "gray1" }) => theme.color[color]};
-  ${({ typo = "regular4" }) => theme.typo[typo]}
-  border: ${({ borderColor = "gray1" }) =>
-    `1px solid ${theme.color[borderColor]}`};
-  border-radius: ${({ borderRadius = 6 }) => `${borderRadius}px`};
+  color: ${({ $color = "gray1" }) => theme.color[$color]};
+  ${({ $typo = "regular4" }) => theme.typo[$typo]}
+  border: ${({ $border_color = "gray1" }) =>
+    `1px solid ${theme.color[$border_color]}`};
+  border-radius: ${({ $border_radius = 6 }) => `${$border_radius}px`};
   outline: none;
-  padding: ${({ py = 14, px = 17 }) => `${py}px ${px}px`};
+  padding: ${({ $py = 14, $px = 17 }) => `${$py}px ${$px}px`};
 `;

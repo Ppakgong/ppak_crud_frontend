@@ -18,14 +18,14 @@ const AuthLoginForm = ({ id, password, onChange }: AuthLoginFormProps) => {
           name="id"
           value={id}
           onChange={onChange}
-          borderColor="gray5"
+          $border_color="gray5"
         />
         <Input
           placeholder="비밀번호"
           name="password"
           value={password}
           onChange={onChange}
-          borderColor="gray5"
+          $border_color="gray5"
         />
       </Form>
     </Container>
