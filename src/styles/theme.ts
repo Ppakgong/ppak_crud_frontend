@@ -18,8 +18,8 @@ const typo_size = {
 
 const theme = {
   color: {
-    white: "#ffffff",
-    black: "#252525",
+    white: "#fdfdfd",
+    black: "#080808",
     gray1: "#333333",
     gray2: "#4d4d4d",
     gray3: "#666666",
