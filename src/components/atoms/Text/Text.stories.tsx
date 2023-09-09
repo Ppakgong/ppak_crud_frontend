@@ -16,19 +16,19 @@ export const Bold = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Bold.args = {
   label: "Bold",
-  typo: "bold1",
+  $typo: "bold1",
 };
 
 export const Medium = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Medium.args = {
   label: "Medium",
-  typo: "medium4",
+  $typo: "medium4",
 };
 
 export const Regular = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Regular.args = {
   label: "Regular",
-  typo: "regular6",
+  $typo: "regular6",
 };
