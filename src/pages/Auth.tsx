@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import AuthHeader from "../components/organisms/AuthHeader/AuthHeader";
 
+/**
+ *
+ * @returns Auth페이지에 나올 헤더
+ */
 const AuthPage = () => {
   return (
     <Container>
