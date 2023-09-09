@@ -10,6 +10,13 @@ export type TextProps = TextStyleProps & {
   label: string;
 };
 
+/**
+ *
+ * @param label 텍스트
+ * @param color default: gray1
+ * @param typo default: medium4
+ * @returns
+ */
 const Text = ({ label, color = "gray1", typo = "medium4" }: TextProps) => {
   return (
     <Index color={color} typo={typo}>
