@@ -11,20 +11,22 @@ export type ButtonStyleProps = {
 };
 
 export type ButtonProps = ButtonStyleProps & {
+  label: string;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 };
 
 const Button = ({
+  label,
   type = "button",
   onClick,
-  isDisabled,
+  isDisabled = false,
   ...props
 }: ButtonProps) => {
   return (
     <Index type={type} onClick={onClick} {...props} disabled={isDisabled}>
-      Button
+      {label}
     </Index>
   );
 };
@@ -33,6 +35,7 @@ export default Button;
 
 const Index = styled.button<ButtonStyleProps>`
   width: 100%;
+  height: 100%;
   background-color: ${({ $bg_color = ACCENT_COLOR }) => theme.color[$bg_color]};
   color: ${({ $color = "white" }) => theme.color[$color]};
   ${({ $typo = "medium3" }) => theme.typo[$typo]}

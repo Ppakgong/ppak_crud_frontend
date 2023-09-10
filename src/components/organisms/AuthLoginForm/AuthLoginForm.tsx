@@ -1,18 +1,25 @@
 import styled from "styled-components";
 import theme from "../../../styles/theme";
 import Input from "../../atoms/Input/Input";
-import { ChangeEvent } from "react";
+import { ChangeEvent, FormEvent } from "react";
+import Button from "../../atoms/Button/Button";
 
 export type AuthLoginFormProps = {
   id: string;
   password: string;
   onChange: ({ e }: { e: ChangeEvent<HTMLInputElement> }) => void;
+  onSubmit: (e: FormEvent) => Promise<void>;
 };
 
-const AuthLoginForm = ({ id, password, onChange }: AuthLoginFormProps) => {
+const AuthLoginForm = ({
+  id,
+  password,
+  onChange,
+  onSubmit,
+}: AuthLoginFormProps) => {
   return (
     <Container>
-      <Form>
+      <Form onSubmit={onSubmit}>
         <Input
           placeholder="아이디"
           name="id"
@@ -27,6 +34,7 @@ const AuthLoginForm = ({ id, password, onChange }: AuthLoginFormProps) => {
           onChange={onChange}
           $border_color="gray5"
         />
+        <Button label="로그인" type="submit" />
       </Form>
     </Container>
   );

@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import AuthLoginForm from "./AuthLoginForm";
 
 const AuthLoginFormContainer = () => {
@@ -11,7 +11,11 @@ const AuthLoginFormContainer = () => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  return <AuthLoginForm {...inputs} onChange={onChange} />;
+  const onSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+  };
+
+  return <AuthLoginForm {...inputs} onChange={onChange} onSubmit={onSubmit} />;
 };
 
 export default AuthLoginFormContainer;
