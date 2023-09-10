@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import AuthHeader from "../components/organisms/AuthHeader/AuthHeader";
-import AuthLoginFormContainer from "../components/organisms/AuthLoginForm/AuthLoginFormContainer";
+import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
+import theme from "../styles/theme";
 
 /**
  *
@@ -12,7 +13,7 @@ const AuthPage = () => {
       <AuthHeaderWrapper>
         <AuthHeader />
       </AuthHeaderWrapper>
-      <AuthLoginFormContainer />
+      <AuthFormContainer />
     </Container>
   );
 };
@@ -23,6 +24,9 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${theme.color.blue_dark};
+  width: 100%;
+  height: 100%;
 `;
 
 const AuthHeaderWrapper = styled.div`
