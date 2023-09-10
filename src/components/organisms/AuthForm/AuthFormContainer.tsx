@@ -7,12 +7,22 @@ const AuthFormContainer = () => {
   const [currRole, setCurrRole] = useState<AuthButtonRole>("SIGN_IN");
   const [inputs, setInputs] = useState({
     id: "",
+    name: "",
+    mail: "",
     password: "",
+    confirmPassword: "",
   });
   const [isHide, setIsHide] = useState(true);
 
   const onChangeRole = ({ role }: { role: AuthButtonRole }) => {
     setCurrRole(role);
+    setInputs({
+      id: "",
+      name: "",
+      mail: "",
+      password: "",
+      confirmPassword: "",
+    });
   };
 
   const onChange = ({ e }: { e: ChangeEvent<HTMLInputElement> }) => {
@@ -23,7 +33,11 @@ const AuthFormContainer = () => {
     setIsHide((prev) => !prev);
   };
 
-  const onSignin = async (e: FormEvent) => {
+  const onSignIn = async (e: FormEvent) => {
+    e.preventDefault();
+  };
+
+  const onSignUp = async (e: FormEvent) => {
     e.preventDefault();
   };
 
@@ -35,7 +49,8 @@ const AuthFormContainer = () => {
       onChange={onChange}
       isHide={isHide}
       onHideToggle={onHideToggle}
-      onSignin={onSignin}
+      onSignIn={onSignIn}
+      onSignUp={onSignUp}
     />
   );
 };

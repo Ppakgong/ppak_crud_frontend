@@ -13,12 +13,16 @@ export type AuthFormProps = {
   onChangeRole: ({ role }: { role: AuthButtonRole }) => void;
   inputs: {
     id: string;
+    name: string;
+    mail: string;
     password: string;
+    confirmPassword: string;
   };
   onChange: ({ e }: { e: ChangeEvent<HTMLInputElement> }) => void;
   isHide: boolean;
   onHideToggle: () => void;
-  onSignin: (e: FormEvent) => void;
+  onSignIn: (e: FormEvent) => void;
+  onSignUp: (e: FormEvent) => void;
 };
 
 const AuthForm = ({
@@ -28,7 +32,8 @@ const AuthForm = ({
   onChange,
   isHide,
   onHideToggle,
-  onSignin,
+  onSignIn,
+  onSignUp,
 }: AuthFormProps) => {
   const roleButtonStyleProps = ({
     role,
@@ -72,7 +77,7 @@ const AuthForm = ({
             {...roleButtonStyleProps({ role: "SIGN_UP" })}
           />
         </RoleButtonWrapper>
-        <Form onSubmit={onSignin}>
+        <Form onSubmit={currRole === "SIGN_IN" ? onSignIn : onSignUp}>
           <InputWrapper>
             <InputIconWrapper>
               <Icon src={Icons.person} alt="person" size={30} />
@@ -86,6 +91,36 @@ const AuthForm = ({
               {...inputStyleProps}
             />
           </InputWrapper>
+          {currRole === "SIGN_UP" && (
+            <InputWrapper>
+              <InputIconWrapper>
+                <Icon src={Icons.person} alt="person" size={30} />
+              </InputIconWrapper>
+              <Input
+                placeholder="name"
+                name="name"
+                type="text"
+                value={inputs.name}
+                onChange={onChange}
+                {...inputStyleProps}
+              />
+            </InputWrapper>
+          )}
+          {currRole === "SIGN_UP" && (
+            <InputWrapper>
+              <InputIconWrapper>
+                <Icon src={Icons.person} alt="person" size={30} />
+              </InputIconWrapper>
+              <Input
+                placeholder="E-mail"
+                name="mail"
+                type="text"
+                value={inputs.mail}
+                onChange={onChange}
+                {...inputStyleProps}
+              />
+            </InputWrapper>
+          )}
           <InputWrapper>
             <InputIconWrapper>
               <Icon src={Icons.key} alt="key" size={34} />
@@ -102,13 +137,38 @@ const AuthForm = ({
               <Text label={isHide ? "Show" : "Hide"} />
             </HideTrigger>
           </InputWrapper>
-          <Button label="Login" type="submit" $typo="bold4" $py={20} />
+          {currRole === "SIGN_UP" && (
+            <InputWrapper>
+              <InputIconWrapper>
+                <Icon src={Icons.key} alt="key" size={34} />
+              </InputIconWrapper>
+              <Input
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                type={isHide ? "password" : "text"}
+                value={inputs.confirmPassword}
+                onChange={onChange}
+                {...inputStyleProps}
+              />
+              <HideTrigger onClick={onHideToggle}>
+                <Text label={isHide ? "Show" : "Hide"} />
+              </HideTrigger>
+            </InputWrapper>
+          )}
+          <Button
+            label={currRole === "SIGN_IN" ? "Login" : "Create Account"}
+            type="submit"
+            $typo="bold4"
+            $py={20}
+          />
         </Form>
       </FormWrapper>
-      <FindWrapper>
-        <Text label="Forgot your id?" {...forgotStyleProps} />
-        <Text label="Forgot your password?" {...forgotStyleProps} />
-      </FindWrapper>
+      {currRole === "SIGN_IN" && (
+        <FindWrapper>
+          <Text label="Forgot your id?" {...forgotStyleProps} />
+          <Text label="Forgot your password?" {...forgotStyleProps} />
+        </FindWrapper>
+      )}
     </Container>
   );
 };
