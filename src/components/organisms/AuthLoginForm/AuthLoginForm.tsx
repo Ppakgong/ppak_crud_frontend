@@ -3,6 +3,7 @@ import theme from "../../../styles/theme";
 import Input from "../../atoms/Input/Input";
 import { ChangeEvent, FormEvent } from "react";
 import Button from "../../atoms/Button/Button";
+import Text from "../../atoms/Text/Text";
 import Anchor from "../../atoms/Anchor/Anchor";
 
 export type AuthLoginFormProps = {
@@ -38,7 +39,9 @@ const AuthLoginForm = ({
         <Button label="로그인" type="submit" />
       </Form>
       <FindWrapper>
-        <Anchor href="find_pw" label="비밀번호 찾기" />
+        <Anchor href="find_pw">
+          <Text label="비밀번호 찾기" />
+        </Anchor>
       </FindWrapper>
     </Container>
   );
