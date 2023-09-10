@@ -3,6 +3,7 @@ import theme from "../../../styles/theme";
 import Input from "../../atoms/Input/Input";
 import { ChangeEvent, FormEvent } from "react";
 import Button from "../../atoms/Button/Button";
+import Anchor from "../../atoms/Anchor/Anchor";
 
 export type AuthLoginFormProps = {
   id: string;
@@ -36,6 +37,9 @@ const AuthLoginForm = ({
         />
         <Button label="로그인" type="submit" />
       </Form>
+      <FindWrapper>
+        <Anchor href="find_pw" label="비밀번호 찾기" />
+      </FindWrapper>
     </Container>
   );
 };
@@ -43,15 +47,25 @@ const AuthLoginForm = ({
 export default AuthLoginForm;
 
 const Container = styled.div`
-  box-shadow: ${theme.shadow.normal};
-  border: 1px solid ${theme.color.gray5};
-  border-radius: 6px;
-  padding: 20px 28px;
   width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  box-shadow: ${theme.shadow.normal};
+  border: 1px solid ${theme.color.gray5};
+  border-radius: 6px;
+  padding: 20px 28px;
+`;
+
+const FindWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
