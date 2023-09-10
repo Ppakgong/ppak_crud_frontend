@@ -8,6 +8,8 @@ export type TextStyleProps = {
     startColor: ColorType;
     endColor: ColorType;
   };
+  $isUnderline?: boolean;
+  $isPointer?: boolean;
 };
 
 export type TextProps = TextStyleProps & {
@@ -20,6 +22,8 @@ export type TextProps = TextStyleProps & {
  * @param color default: gray1
  * @param typo default: medium4
  * @param gradient 우측방향으로 startColor to endColor
+ * @param isUnderline default: false
+ * @param isPointer default: false
  * @returns
  */
 const Text = ({ label, ...props }: TextProps) => {
@@ -42,4 +46,7 @@ const Index = styled.span<TextStyleProps>`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     `}
+    text-decoration: ${({ $isUnderline = false }) =>
+    $isUnderline ? "underline" : "none"};
+  cursor: ${({ $isPointer = false }) => ($isPointer ? "pointer" : "normal")};
 `;

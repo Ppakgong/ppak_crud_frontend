@@ -8,6 +8,7 @@ export type ButtonStyleProps = {
   $typo?: TypoType;
   $py?: number;
   $px?: number;
+  $border_radius?: number;
 };
 
 export type ButtonProps = ButtonStyleProps & {
@@ -42,8 +43,9 @@ const Index = styled.button<ButtonStyleProps>`
   outline: none;
   padding: ${({ $py = 10, $px = 0 }) => `${$py}px ${$px}px`};
   border: none;
-  border-radius: 6px;
+  border-radius: ${({ $border_radius = 6 }) => `${$border_radius}px`};
   cursor: pointer;
+  transition: background-color 0.3s;
 
   &:hover {
     background-color: ${({ $bg_color = ACCENT_COLOR }) =>
