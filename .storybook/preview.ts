@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { withThemeFromJSXProvider } from "@storybook/addon-styling";
 import { GlobalStyle } from "../src/styles/GlobalStyle";
+import { withRouter } from "storybook-addon-react-router-v6";
 
 const preview: Preview = {
   parameters: {
@@ -17,6 +18,7 @@ const preview: Preview = {
     withThemeFromJSXProvider({
       GlobalStyles: GlobalStyle,
     }),
+    withRouter,
   ],
 };
 
