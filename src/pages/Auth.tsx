@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import AuthHeader from "../components/organisms/AuthHeader/AuthHeader";
-import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
 import theme from "../styles/theme";
 
 /**
@@ -13,7 +12,6 @@ const AuthPage = () => {
       <AuthHeaderWrapper>
         <AuthHeader />
       </AuthHeaderWrapper>
-      <AuthFormContainer />
     </Container>
   );
 };
