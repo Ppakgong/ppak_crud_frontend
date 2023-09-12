@@ -17,7 +17,7 @@ export type InputProps = InputStyleProps & {
   placeholder: string;
   type?: "text" | "password" | "number";
   value?: string;
-  onChange: ({ e }: { e: ChangeEvent<HTMLInputElement> }) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   name: string;
 };
 
@@ -43,7 +43,7 @@ const Input = ({
     <Index
       placeholder={placeholder}
       value={value}
-      onChange={(e) => onChange({ e })}
+      onChange={onChange}
       name={name}
       type={type}
       autoComplete="off"

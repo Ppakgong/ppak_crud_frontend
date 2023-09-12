@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import AuthHeader from "../components/organisms/AuthHeader/AuthHeader";
-import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
 import theme from "../styles/theme";
+import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
+import Text from "../components/atoms/Text/Text";
 
 /**
  *
@@ -10,9 +10,14 @@ import theme from "../styles/theme";
 const AuthPage = () => {
   return (
     <Container>
-      <AuthHeaderWrapper>
-        <AuthHeader />
-      </AuthHeaderWrapper>
+      <Logo>
+        <Text
+          label="MS Community"
+          $typo="bold1"
+          $color="black"
+          $gradient={{ startColor: "purple1", endColor: "red1" }}
+        />
+      </Logo>
       <AuthFormContainer />
     </Container>
   );
@@ -29,8 +34,9 @@ const Container = styled.main`
   height: 100%;
   min-height: 100vh;
   padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 `;
 
-const AuthHeaderWrapper = styled.div`
-  margin-bottom: 48px;
-`;
+const Logo = styled.div``;
