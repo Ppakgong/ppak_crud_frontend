@@ -11,7 +11,7 @@ const SignInContainer = () => {
   /**
    * 로그인 로직
    */
-  const onSignIn = useCallback((e: FormEvent) => {
+  const onSignIn = useCallback(async (e: FormEvent) => {
     e.preventDefault();
   }, []);
 

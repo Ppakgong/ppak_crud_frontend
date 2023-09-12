@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export type IconsProps = {
+export type IconProps = {
   src: string;
   alt: string;
-  size: number;
+  size?: number;
 };
 
-const Icon = ({ src, alt, size }: IconsProps) => {
+const Icon = ({ src, alt, size = 34 }: IconProps) => {
   return <Index src={src} alt={alt} width={size} height={size} />;
 };
 
