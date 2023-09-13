@@ -8,9 +8,14 @@ import { useMemo, useState } from "react";
 export type IconInputProps = {
   iconProps: IconProps;
   inputProps: InputProps;
+  isError?: boolean;
 };
 
-const IconInput = ({ iconProps, inputProps }: IconInputProps) => {
+const IconInput = ({
+  iconProps,
+  inputProps,
+  isError = false,
+}: IconInputProps) => {
   const [isHide, setIsHide] = useState(true);
 
   const onToggleHide = () => {
@@ -32,7 +37,7 @@ const IconInput = ({ iconProps, inputProps }: IconInputProps) => {
       $px: 50,
       $border_color: "gray5",
       $border_weight: 1.4,
-      type: isHide ? "password" : "text",
+      type: inputProps.type === "password" && isHide ? "password" : "text",
     }),
     [inputProps, isHide]
   );
@@ -47,6 +52,7 @@ const IconInput = ({ iconProps, inputProps }: IconInputProps) => {
           <Text label={isHide ? "Show" : "Hide"} />
         </HideWrapper>
       )}
+      {isError && <div>에러메시지 노출</div>}
     </Container>
   );
 };

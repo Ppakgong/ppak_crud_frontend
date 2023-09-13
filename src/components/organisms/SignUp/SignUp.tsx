@@ -12,6 +12,7 @@ export type SignUpProps = {
   confirmPassword: string;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onSignUp: (e: FormEvent) => Promise<void>;
+  onValidId: ({ id }: { id: string }) => boolean;
 };
 
 const SignUp = ({
@@ -22,12 +23,14 @@ const SignUp = ({
   confirmPassword,
   onChange,
   onSignUp,
+  onValidId,
 }: SignUpProps) => {
   return (
     <Form onSubmit={onSignUp}>
       <IconInput
         iconProps={{ src: Icons.person, alt: "person" }}
         inputProps={{ name: "id", placeholder: "ID", value: id, onChange }}
+        isError={!onValidId({ id })}
       />
       <IconInput
         iconProps={{ src: Icons.person, alt: "person" }}
