@@ -10,7 +10,6 @@ export type TextStyleProps = {
   };
   $isUnderline?: boolean;
   $isPointer?: boolean;
-  $isError?: boolean;
 };
 
 export type TextProps = TextStyleProps & {
@@ -25,7 +24,6 @@ export type TextProps = TextStyleProps & {
  * @param gradient 우측방향으로 startColor to endColor
  * @param isUnderline default: false
  * @param isPointer default: false
- * @param isError default: true
  * @returns
  */
 const Text = ({ label, ...props }: TextProps) => {
@@ -51,11 +49,4 @@ const Index = styled.span<TextStyleProps>`
     text-decoration: ${({ $isUnderline = false }) =>
     $isUnderline ? "underline" : "none"};
   cursor: ${({ $isPointer = false }) => ($isPointer ? "pointer" : "normal")};
-  ${({ $isError = true }) =>
-    $isError &&
-    css`
-      width: 100%;
-      height: 100%;
-      color: red;
-    `}
 `;

@@ -52,7 +52,7 @@ const IconInput = ({
           <Text label={isHide ? "Show" : "Hide"} />
         </HideWrapper>
       )}
-      <Error>{isError && <Text label="*에러" />}</Error>
+      <Error>{isError && <Text label="*에러" $color="red2" />}</Error>
     </Container>
   );
 };
