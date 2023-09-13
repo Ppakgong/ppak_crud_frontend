@@ -52,7 +52,7 @@ const IconInput = ({
           <Text label={isHide ? "Show" : "Hide"} />
         </HideWrapper>
       )}
-      {isError && <div>에러메시지 노출</div>}
+      <Error>{isError && <Text label="*에러" />}</Error>
     </Container>
   );
 };
@@ -84,4 +84,10 @@ const HideWrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+`;
+
+const Error = styled.div`
+  position: absolute;
+  padding-top: 4px;
+  padding-left: 50px;
 `;
