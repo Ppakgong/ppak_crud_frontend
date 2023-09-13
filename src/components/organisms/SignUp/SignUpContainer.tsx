@@ -11,6 +11,20 @@ const SignUpContainer = () => {
     confirmPassword: "",
   });
 
+  const regex_id = /^[a-zA-Z0-9]*$/;
+
+  /**
+   * @returns true면 validation 통과, false면 에러
+   */
+  const onValidId = ({ id }: { id: string }) => {
+    // 아이디 validation
+    // 아이디는 숫자와 문자만을 받을 수 있다.
+    if (regex_id.test(id)) {
+      return true;
+    }
+    return false;
+  };
+
   /**
    * 회원가입 로직
    */
@@ -27,6 +41,7 @@ const SignUpContainer = () => {
       confirmPassword={inputs.confirmPassword}
       onChange={onChange}
       onSignUp={onSignUp}
+      onValidId={onValidId}
     />
   );
 };
