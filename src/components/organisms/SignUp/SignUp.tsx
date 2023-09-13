@@ -13,6 +13,7 @@ export type SignUpProps = {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   onSignUp: (e: FormEvent) => Promise<void>;
   onValidId: ({ id }: { id: string }) => boolean;
+  onValidPassword: ({ password }: { password: string }) => boolean;
 };
 
 const SignUp = ({
@@ -24,6 +25,7 @@ const SignUp = ({
   onChange,
   onSignUp,
   onValidId,
+  onValidPassword,
 }: SignUpProps) => {
   return (
     <Form onSubmit={onSignUp}>
@@ -59,6 +61,7 @@ const SignUp = ({
           onChange,
           type: "password",
         }}
+        isError={!onValidPassword({ password })}
       />
       <IconInput
         iconProps={{ src: Icons.key, alt: "key" }}

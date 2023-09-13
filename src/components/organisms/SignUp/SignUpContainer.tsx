@@ -12,6 +12,7 @@ const SignUpContainer = () => {
   });
 
   const regex_id = /^[a-zA-Z0-9]*$/;
+  const regex_password = /^(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\|/]).{8,}$/;
 
   /**
    * @returns true면 validation 통과, false면 에러
@@ -20,6 +21,15 @@ const SignUpContainer = () => {
     // 아이디 validation
     // 아이디는 숫자와 문자만을 받을 수 있다.
     if (regex_id.test(id)) {
+      return true;
+    }
+    return false;
+  };
+
+  const onValidPassword = ({ password }: { password: string }) => {
+    // 비밀번호 validation
+    // 비밀번호는 8자 이상, 특수기호를 하나 이상 포함해야 한다.
+    if (regex_password.test(password)) {
       return true;
     }
     return false;
@@ -42,6 +52,7 @@ const SignUpContainer = () => {
       onChange={onChange}
       onSignUp={onSignUp}
       onValidId={onValidId}
+      onValidPassword={onValidPassword}
     />
   );
 };
