@@ -29,6 +29,7 @@ const theme = {
     green1: "#5cdb95",
     purple1: "#6747C7",
     red1: "#CF2D0C",
+    red2: "red",
     blue_dark: "#343642",
     blue_light: "#2f889a",
   },

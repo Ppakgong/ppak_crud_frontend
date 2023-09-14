@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import theme from "../styles/theme";
-import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
-import Text from "../components/atoms/Text/Text";
 
 /**
  *
@@ -10,15 +8,7 @@ import Text from "../components/atoms/Text/Text";
 const AuthPage = () => {
   return (
     <Container>
-      <Logo>
-        <Text
-          label="MS Community"
-          $typo="bold1"
-          $color="black"
-          $gradient={{ startColor: "purple1", endColor: "red1" }}
-        />
-      </Logo>
-      <AuthFormContainer />
+      <Logo></Logo>
     </Container>
   );
 };
