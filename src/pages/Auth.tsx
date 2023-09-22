@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import theme from "../styles/theme";
+import AuthLogo from "../components/organisms/AuthLogo/AuthLogo";
+import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
 
 /**
  *
@@ -8,7 +10,8 @@ import theme from "../styles/theme";
 const AuthPage = () => {
   return (
     <Container>
-      <Logo></Logo>
+      <AuthLogo />
+      <AuthFormContainer />
     </Container>
   );
 };
@@ -28,5 +31,3 @@ const Container = styled.main`
   flex-direction: column;
   gap: 48px;
 `;
-
-const Logo = styled.div``;
