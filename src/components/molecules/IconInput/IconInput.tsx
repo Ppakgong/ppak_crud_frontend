@@ -36,6 +36,7 @@ const IconInput = ({ iconProps, inputProps }: IconInputProps) => {
     }),
     [inputProps, isHide]
   );
+
   return (
     <Container>
       <IconWrapper>
