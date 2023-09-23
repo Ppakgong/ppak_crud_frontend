@@ -5,8 +5,18 @@ import theme from "../../../styles/theme";
 const AuthForgot = () => {
   return (
     <Container>
-      <Text label={"Forgot your ID?"} $color="white" $typo="medium5" />
-      <Text label={"Forgot your Password?"} $color="white" $typo="medium5" />
+      <Text
+        label={"Forgot your ID?"}
+        $color="white"
+        $typo="medium5"
+        $isPointer={true}
+      />
+      <Text
+        label={"Forgot your Password?"}
+        $color="white"
+        $typo="medium5"
+        $isPointer={true}
+      />
     </Container>
   );
 };
