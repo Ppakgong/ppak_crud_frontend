@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import theme from "../../../styles/theme";
-import Button, { ButtonStyleProps } from "../../atoms/Button/Button";
+import theme from "../../../../styles/theme";
+import Button, { ButtonStyleProps } from "../../../atoms/Button/Button";
 import AuthForgot from "../AuthForgot/AuthForgot";
 import SignInContainer from "../SignIn/SignInContainer";
 import { AuthRoleButton } from "./AuthFormContainer";

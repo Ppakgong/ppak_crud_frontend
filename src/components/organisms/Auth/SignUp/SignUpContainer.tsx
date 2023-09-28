@@ -1,5 +1,5 @@
 import { FormEvent } from "react";
-import useInput from "../../../hooks/useInput";
+import useInput from "../../../../hooks/useInput";
 import SignUp from "./SignUp";
 
 const SignUpContainer = () => {

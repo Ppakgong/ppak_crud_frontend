@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import theme from "../styles/theme";
-import AuthLogo from "../components/organisms/AuthLogo/AuthLogo";
-import AuthFormContainer from "../components/organisms/AuthForm/AuthFormContainer";
+import AuthLogo from "../components/organisms/Auth/AuthLogo/AuthLogo";
+import AuthFormContainer from "../components/organisms/Auth/AuthForm/AuthFormContainer";
 
 /**
  *
@@ -27,7 +27,5 @@ const Container = styled.main`
   height: 100%;
   min-height: 100vh;
   padding: 100px 0;
-  display: flex;
-  flex-direction: column;
   gap: 48px;
 `;

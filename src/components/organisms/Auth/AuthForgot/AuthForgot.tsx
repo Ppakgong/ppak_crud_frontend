@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Text from "../../atoms/Text/Text";
-import theme from "../../../styles/theme";
+import Text from "../../../atoms/Text/Text";
+import theme from "../../../../styles/theme";
 
 const AuthForgot = () => {
   return (

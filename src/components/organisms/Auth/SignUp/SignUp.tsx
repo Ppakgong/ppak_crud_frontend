@@ -1,9 +1,9 @@
 import { ChangeEvent, FormEvent } from "react";
 import styled from "styled-components";
-import IconInput from "../../molecules/IconInput/IconInput";
-import Icons from "../../../utils/icons";
-import Button from "../../atoms/Button/Button";
-import Error from "../../atoms/Error/Error";
+import IconInput from "../../../molecules/IconInput/IconInput";
+import Icons from "../../../../utils/icons";
+import Button from "../../../atoms/Button/Button";
+import Error from "../../../atoms/Error/Error";
 
 export type SignUpProps = {
   id: string;
