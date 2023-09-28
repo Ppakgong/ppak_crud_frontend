@@ -12,7 +12,7 @@ export type TextStyleProps = {
 };
 
 export type TextProps = TextStyleProps & {
-  label: string;
+  label: string | number;
 };
 
 const Text = ({ label, ...props }: TextProps) => {

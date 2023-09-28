@@ -9,6 +9,7 @@ export type ButtonStyleProps = {
   $color?: ColorType;
   $typo?: TypoType;
   $border_radius?: number;
+  $width?: number;
 };
 
 export type ButtonProps = ButtonStyleProps & {
@@ -35,7 +36,7 @@ const Button = ({
 export default Button;
 
 const Index = styled.button<ButtonStyleProps>`
-  width: 100%;
+  width: ${({ $width = 100 }) => `${$width}%`};
   height: 100%;
   background-color: ${({ $bg_color = ACCENT_COLOR }) => theme.color[$bg_color]};
   color: ${({ $color = "white" }) => theme.color[$color]};
